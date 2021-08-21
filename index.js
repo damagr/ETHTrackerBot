@@ -1,5 +1,18 @@
 import { Client, Intents } from "discord.js";
 import axios from "axios";
+import express from "express";
+
+const server = express();
+
+server.get('/', function (req, res) {
+  res.send('ETHTracker')
+});
+
+function keepAlive() {
+  server.listen(3000, () => {
+    console.log("Server is ready.");
+  });
+}
 
 const url =
   "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd";
@@ -31,4 +44,5 @@ function getPrice() {
   });
 }
 
+keepAlive();
 client.login(BOT_TOKEN);
