@@ -21,7 +21,7 @@ client.once("ready", () => {
 
   setInterval(async () => {
     getPrice();
-    BOT.user.setActivity("Ethereum: " + lastPrice);
+    BOT.user.setActivity("ETH: " + lastPrice);
   }, 5000);
 });
 
