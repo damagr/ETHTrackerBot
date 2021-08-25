@@ -34,7 +34,7 @@ client.once("ready", () => {
 
   setInterval(async () => {
     getPrice();
-    BOT.user.setActivity("ETH: " + lastPrice);
+    BOT.user.setActivity("ETH: " + lastPrice, { type: "WATCHING" }).catch(console.error);
   }, 10000);
 });
 
