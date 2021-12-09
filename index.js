@@ -14,8 +14,7 @@ function keepAlive() {
   });
 }
 
-const url =
-  "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd";
+const url = "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd";
 let lastPrice;
 
 const client = new Client({
@@ -34,7 +33,7 @@ client.once("ready", () => {
 
   setInterval(async () => {
     getPrice();
-    BOT.user.setActivity("ETH: " + lastPrice, { type: "WATCHING" }).catch(console.error);
+    BOT.user.setActivity("ETH: " + lastPrice + '$', { type: "WATCHING" }).catch(console.error);
   }, 10000);
 });
 
